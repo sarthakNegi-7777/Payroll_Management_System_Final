@@ -1,10 +1,23 @@
+from contextlib import ContextDecorator
 from django.shortcuts import render
+from .models import Employee,Role,Department
+
+from Emplyee_app.models import Employee
 
 # Create your views here.
 def index(request):
     return render(request,'index.html')
+
 def all_emp(request):
-    return render(request,'all_emp.html')
+    print("view is called")
+    emp = Employee.objects.all()
+    context = {
+        'emp': emp
+    }
+    print(context)
+    return render(request,'all_emp.html',context)
+
+
 def add_emp(request):
     return render(request,'add_emp.html')
 def remove_emp(request):
