@@ -1,6 +1,6 @@
 from contextlib import ContextDecorator
 from datetime import datetime
-
+from django.db.models import Q
 from django.shortcuts import render,HttpResponse
 from .models import Employee,Role,Department
 
@@ -58,5 +58,25 @@ def remove_emp(request,emp_id = 0):
 
 
 def filter_emp(request):
-    return render(request,'filter_emp.html')
+    if request.method == 'POST':
+        name = request.POST['name']
+        role = request.POST['role']
+        dept = request.POST['dept']
 
+        emp = Employee.objects.all()
+
+        if name:
+            emp = emp.filter(Q(first_name__icontains = name) | Q(last_name__icontains = name))
+        if dept:
+            emp = emp.filter(dept__name__icontains = dept)
+        if role:
+            emp = emp.filter(role__name__icontains = role)
+        context = {
+            'emp':emp
+        }
+        return render(request,'all_emp.html',context)
+    elif request.method == 'GET':  
+        return render(request,'filter_emp.html')
+
+    else:
+        return HttpResponse("An error occured")
