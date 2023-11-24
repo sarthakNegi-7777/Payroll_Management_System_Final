@@ -10,7 +10,11 @@
 <body>
    
     <div class="container">
-        <h1>add an employee</h1>
+        <h1>add an employee</h1><hr>
+        <a class="btn btn-primary" href="/all_emp" role="button">view  all Employee</a>
+        <a class="btn btn-primary" href="/add_emp" role="button">add an Employee</a>
+        <a class="btn btn-primary" href="/remove_emp" role="button">remove an Employee</a>
+        <a class="btn btn-primary" href="/filter_emp" role="button">filter Employee</a>
         <hr>
         <form action="/add_emp" method='post'>
             {% csrf_token %}
@@ -58,7 +62,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
         </form>
     </div>
 
