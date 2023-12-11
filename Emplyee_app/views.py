@@ -1,9 +1,9 @@
 from contextlib import ContextDecorator
 from datetime import datetime
 from django.db.models import Q
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse,redirect
 from .models import Employee,Role,Department
-
+from django.http import JsonResponse
 
 from Emplyee_app.models import Employee
 
@@ -31,12 +31,16 @@ def add_emp(request):
         new_emp = Employee(first_name=first_name, last_name=last_name, salary=salary, bonus=bonus, phone=phone, dept_id = dept, role_id = role, hire_date=datetime.now())
         new_emp.save()
 
-        return HttpResponse('Employee added successfully')
+        # return HttpResponse('Employee added successfully')  
+        return redirect('emp_added_success')
+       
     elif request.method == 'GET':   
         return render(request,'add_emp.html')
     else:
         return HttpResponse("an exception occured! Employee not added")
 
+def emp_added_success(request):
+    return render(request, 'emp_added_success.html') 
 
 def remove_emp(request,emp_id = 0):
     if emp_id:

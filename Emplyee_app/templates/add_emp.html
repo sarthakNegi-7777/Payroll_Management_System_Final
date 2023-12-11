@@ -3,7 +3,7 @@
 {%block heading%}Add Employee{%endblock%}
 {%block body%}
 
-        <form action="/add_emp" method='post'>
+        <form  id="addEmployeeForm" action="/add_emp" method='post'>
             {% csrf_token %}
             <div class="row">
                 <div class="col">
@@ -51,6 +51,7 @@
 
             <button type="submit" class="btn btn-primary mt-3">Submit</button>
         </form>
+
 
     {%endblock%}
 

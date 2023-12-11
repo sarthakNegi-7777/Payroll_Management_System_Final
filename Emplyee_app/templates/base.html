@@ -10,16 +10,18 @@
     <link rel="stylesheet" type="text/css" href="{% static 'Emplyee_app/css/basestyle.css' %}">
   </head>
 <body>
-  <nav class="navbar navbar-dark bg-dark text-white rounded-3 mb-3">
+ <div class="container-fluid ">
+   <nav class="navbar navbar-dark bg-dark text-white rounded-2 mb-3">
     <div class="head d-flex justify-content-center w-100 ">
       <h1>PAYROLL MANAGEMENT SYSTEM</h1>
     </div>
   </nav>
+ </div>
   
   
 
    
-    <div class="container">
+    <div class="container" style="background-color: rgb(35, 35, 36);">
         <h1>{% block heading%}{%endblock%}</h1><hr>
         <a class="btn btn-primary" href="/all_emp" role="button">view  all Employee</a>
         <a class="btn btn-primary" href="/add_emp" role="button">add an Employee</a>
