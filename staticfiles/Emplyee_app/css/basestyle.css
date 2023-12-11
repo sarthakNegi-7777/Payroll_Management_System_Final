@@ -1,0 +1,6 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background: url('{% static 'Emplyee_app/images/bgimg.jpg' %}') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+  }
