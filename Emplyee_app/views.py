@@ -42,12 +42,15 @@ def add_emp(request):
 def emp_added_success(request):
     return render(request, 'emp_added_success.html') 
 
+
+
 def remove_emp(request,emp_id = 0):
     if emp_id:
         try:
             emp_to_be_removed = Employee.objects.get(id = emp_id)
             emp_to_be_removed.delete()
-            return HttpResponse("employee removed Successfully")
+            # return HttpResponse("employee removed Successfully")
+            return redirect('emp_removed_success')
 
         except:
             return HttpResponse("Please enter a valid employee id")
@@ -60,7 +63,10 @@ def remove_emp(request,emp_id = 0):
 
     return render(request,'remove_emp.html',context)
 
+def emp_removed_success(request):
+    return render(request, 'emp_removed_success.html') 
 
+    
 def filter_emp(request):
     if request.method == 'POST':
         name = request.POST['name']
