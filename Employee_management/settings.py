@@ -84,6 +84,10 @@ DATABASES = {
 
 
 # Password validation
+LOGIN_URL = '/login_page/'
+LOGIN_REDIRECT_URL = 'remove_emp'
+
+
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
