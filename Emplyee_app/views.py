@@ -116,3 +116,8 @@ def filter_emp(request):
 
     else:
         return HttpResponse("An error occured")
+@login_required
+def signout(request):
+    logout(request)
+    messages.success(request,"Logged out succesfully")
+    return redirect('login_page')
