@@ -7,6 +7,13 @@ from django.http import JsonResponse
 
 from Emplyee_app.models import Employee
 
+
+def login_page(request):
+    return render(request,"login_page.html")
+
+
+
+
 # Create your views here.
 def index(request):
     return render(request,'index.html')
