@@ -1,23 +1,50 @@
 from contextlib import ContextDecorator
 from datetime import datetime
+from email import message
 from django.db.models import Q
 from django.shortcuts import render,HttpResponse,redirect
 from .models import Employee,Role,Department
 from django.http import JsonResponse
+from django.contrib.auth.models import User
+from django.contrib import messages
+from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.decorators import login_required
+
 
 from Emplyee_app.models import Employee
 
 
 def login_page(request):
-    return render(request,"login_page.html")
+    if request.method == 'POST':
+        user_name = request.POST['user_name']
+        password1 = request.POST['password1']
 
+        if not User.objects.filter(username = user_name).exists():
+            messages.error(request,'invalid username')
+            return redirect('login_page')
+
+        user = authenticate(username = user_name,password = password1)
+
+        if user is not None:
+            messages.error(request,"invalid password")
+            return redirect('login_page')
+           
+        else:
+            login(request,user)
+            first_name = user.first_name
+            return render(request,"add_emp.html",{'first_name':first_name})
+
+  
+    return render(request,"login_page.html")
+# prince@123 Prince2pandey
 
 
 
 # Create your views here.
+@login_required
 def index(request):
     return render(request,'index.html')
-
+@login_required
 def all_emp(request):
     emp = Employee.objects.all()
     context = {
@@ -25,7 +52,7 @@ def all_emp(request):
     }
     return render(request,'all_emp.html',context)
 
-
+@login_required
 def add_emp(request):
     if request.method == 'POST':
         first_name = request.POST['first_name']
@@ -45,12 +72,12 @@ def add_emp(request):
         return render(request,'add_emp.html')
     else:
         return HttpResponse("an exception occured! Employee not added")
-
+@login_required
 def emp_added_success(request):
     return render(request, 'emp_added_success.html') 
 
 
-
+@login_required
 def remove_emp(request,emp_id = 0):
     if emp_id:
         try:
@@ -69,11 +96,11 @@ def remove_emp(request,emp_id = 0):
     }
 
     return render(request,'remove_emp.html',context)
-
+@login_required
 def emp_removed_success(request):
     return render(request, 'emp_removed_success.html') 
 
-    
+@login_required  
 def filter_emp(request):
     if request.method == 'POST':
         name = request.POST['name']
