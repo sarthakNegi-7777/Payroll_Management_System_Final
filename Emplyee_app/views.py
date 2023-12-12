@@ -14,30 +14,47 @@ from django.contrib.auth.decorators import login_required
 from Emplyee_app.models import Employee
 
 
+# def login_page(request):
+#     if request.method == 'POST':
+#         user_name = request.POST['user_name']
+#         password1 = request.POST['password1']
+#         print(user_name,password1)
+
+#         if not User.objects.filter(username = user_name).exists():
+#             messages.error(request,'invalid username')
+#             return redirect('login_page')
+
+#         user = authenticate(username = user_name,password = password1)
+
+#         if user is not None:
+#             messages.error(request,"invalid password")
+#             return redirect('login_page')
+           
+#         else:
+#             login(request,user)
+#             first_name = user.first_name
+#             return render(request,"add_emp.html",{'first_name':first_name})
+
+  
+#     return render(request,"login_page.html")
+# prince@123 Prince2pandey
+
 def login_page(request):
+
     if request.method == 'POST':
         user_name = request.POST['user_name']
         password1 = request.POST['password1']
-
-        if not User.objects.filter(username = user_name).exists():
-            messages.error(request,'invalid username')
-            return redirect('login_page')
-
         user = authenticate(username = user_name,password = password1)
 
         if user is not None:
-            messages.error(request,"invalid password")
-            return redirect('login_page')
-           
-        else:
             login(request,user)
             first_name = user.first_name
-            return render(request,"add_emp.html",{'first_name':first_name})
+            return render(request,"index.html",{'first_name':first_name})
+        else:
+            messages.error(request,"bad credentials")
+            return redirect('login_page')
 
-  
     return render(request,"login_page.html")
-# prince@123 Prince2pandey
-
 
 
 # Create your views here.

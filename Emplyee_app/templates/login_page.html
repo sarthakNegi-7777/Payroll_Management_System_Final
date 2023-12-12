@@ -30,7 +30,7 @@
        </div>
        {% endif %}
         
-        <form action="/login_page" method='post'>
+       <form action="{% url 'login_page' %}" method="post">
             {% csrf_token %}
             <div class="row mb-3">
             <div class="col">
