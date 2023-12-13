@@ -4,8 +4,8 @@
 {% block body%}
 
 <div class="container">
-{% if user.is_authenticated %}
-    <h1>hello , {{ first_name }} {{last_name}}</h1>
+    {% if user.is_authenticated %}
+    <h1>hello , {{ first_name }} {{ last_name }}</h1>
 <h1>You are successfully logged in </h1>
 <h1>manage you employees here...</h1>
 </div>

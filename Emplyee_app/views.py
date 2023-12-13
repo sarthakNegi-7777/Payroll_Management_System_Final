@@ -32,7 +32,7 @@ def login_page(request):
     return render(request,"login_page.html")
 
 
-
+# Create your views here.
 @login_required
 def index(request):
     return render(request,'index.html')
