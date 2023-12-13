@@ -23,7 +23,8 @@ def login_page(request):
         if user is not None:
             login(request,user)
             first_name = user.first_name
-            return render(request,"index.html",{'first_name':first_name})
+            last_name = user.last_name
+            return render(request,"index.html",{'first_name':first_name,'last_name':last_name})
         else:
             messages.error(request,"bad credentials")
             return redirect('login_page')
