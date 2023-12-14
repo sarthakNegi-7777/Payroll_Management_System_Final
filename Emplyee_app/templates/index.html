@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
-{% block title %} Home{% endblock%}
-{%block heading%}welcome to homepage{%endblock%}
-{% block body%}
-
-<div class="container">
-    {% if user.is_authenticated %}
-    <h1>hello , {{ first_name }} {{ last_name }}</h1>
-<h1>You are successfully logged in </h1>
-<h1>manage you employees here...</h1>
+{% load static %}
+{% block title %} Home{% endblock %}
+{% block heading %}welcome to homepage{% endblock %}
+{% block body %}
+{% if user.is_authenticated %}
+<div class="row">
+    <div class="col">
+        <h1>hello, {{ first_name }} {{ last_name }}</h1>
+        <h1>You are successfully logged in</h1>
+        <h1>manage your employees here...</h1>
+    </div>
+    <div class="col">
+        <img src="{% static 'Emplyee_app/images/logo2.jpeg' %}"  height="50%" width="70%" alt="img here">
+    </div>
 </div>
-{%endif%}
-
-{%endblock%}
-
+{% endif %}
+{% endblock %}
