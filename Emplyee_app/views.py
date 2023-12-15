@@ -122,3 +122,7 @@ def signout(request):
     logout(request)
     messages.success(request,"Logged out succesfully")
     return redirect('login_page')
+
+@login_required
+def About(request):
+    return render(request,'About.html')

@@ -13,5 +13,8 @@ urlpatterns = [
 
     path('emp_added_success/', views.emp_added_success, name='emp_added_success'),
     path('emp_removed_success/', views.emp_removed_success, name='emp_removed_success'),
-     path('signout', views.signout, name = 'signout'),
+    path('signout', views.signout, name = 'signout'),
+    path('About', views.About, name = 'About'),
+
+
 ] 
