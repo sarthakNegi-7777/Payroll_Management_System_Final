@@ -15,6 +15,7 @@ urlpatterns = [
     path('emp_removed_success/', views.emp_removed_success, name='emp_removed_success'),
     path('signout', views.signout, name = 'signout'),
     path('About', views.About, name = 'About'),
+    path('Contact', views.Contact, name = 'Contact'),
 
 
 ] 

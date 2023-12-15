@@ -126,3 +126,7 @@ def signout(request):
 @login_required
 def About(request):
     return render(request,'About.html')
+
+@login_required
+def Contact(request):
+    return render(request,'Contact.html')
