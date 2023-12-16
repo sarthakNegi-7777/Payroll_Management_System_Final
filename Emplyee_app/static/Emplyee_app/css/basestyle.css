@@ -1,6 +1,7 @@
 body {
     font-family: 'Times New Roman', Times, serif;
-    background: url('/static/Emplyee_app/images/bgimg.jpg') no-repeat center center fixed;
+     background-color: rgb(33, 37, 41);
+    /* background: url('/static/Emplyee_app/images/bgimg.jpg') no-repeat center center fixed; */
     background-size: cover;
     color: #ffffff;
 }
@@ -12,10 +13,11 @@ body::after {
     right: 0;
     bottom: 0;
     left: 0;
-    background: url('/static/Emplyee_app/images/bgimg.jpg') no-repeat center center fixed;
-    /*background-color: rgb(17, 18, 21);
+    background-color: rgb(33, 37, 41);
+    /* background: url('/static/Emplyee_app/images/bgimg.jpg') no-repeat center center fixed; */
+    /*background-color: rgb(33, 37, 41);
     */background-size: cover;
-    filter: blur(5px) brightness(40%);
+    /* filter: blur(5px) brightness(40%); */
     /*Combineblurandbrightness*/z-index: -1;
-    -webkit-filter: blur(5px) brightness(40%);
+  
 }

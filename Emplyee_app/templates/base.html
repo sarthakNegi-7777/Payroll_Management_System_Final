@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'Emplyee_app/css/basestyle.css' %}">
   </head>
 <body>
-  <div class="container-fluid">
+
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white rounded-2 ">
       <div class="container-fluid">
@@ -39,38 +39,29 @@
           </ul>
         </div>
         <div>
-          <a href="/signout" class="btn m-3" style="background-color: rgb(234, 187, 100); color: black;">SignOut</a>
+          <a href="/signout" class="btn mx-2" style="background-color: rgb(234, 187, 100); color: black;">SignOut</a>
       </div>
       </div>
+      
     </nav>
  
-</div>
 
-  
-<!-- 
-<nav class="navbar navbar-dark bg-dark text-white rounded-2 mb-3 d-flex justify-content-between">
-  <div>
-    <h1>PAYROLL MANAGEMENT SYSTEM</h1>
-</div>
-    <div >
-      <a class="btn btn-outline-secondary m-3" href="/" role="button">HOME</a>
-    </div>
-    <div>
-        <a href="/signout" class="btn btn-danger m-3">SignOut</a>
-    </div>
-</nav> -->
-<div class="container-fluid m-3">
+
+  <hr>
+
   <div class="row">
-    <div class="col-sm-2 flex-column  pb-5"style="background-color: rgb(35, 35, 36);">
-      <!-- You can add other elements or styling here -->
+    <div class="col-2 flex-column  p-5"style="background-color: rgb(33, 37, 41);">
+
      
       <a class="btn btn-primary m-4 custom-button" href="/all_emp" role="button">view all Employee</a>
       <a class="btn btn-primary m-4 custom-button" href="/add_emp" role="button">add an Employee</a>
       <a class="btn btn-primary m-4 custom-button" href="/remove_emp" role="button">remove an Employee</a>
       <a class="btn btn-primary m-4 custom-button" href="/filter_emp" role="button">filter Employee</a>
     </div>
-    <div class="col">
-      <div class="container p-5" style="background-color: rgb(35, 35, 36);">
+
+    <!-- 2nd block -->
+    <div class="col p-5" style="background-color: rgb(33, 37, 41);">
+    
         <h1>{% block heading%}{%endblock%}</h1><hr>
        
         <hr>
@@ -79,23 +70,23 @@
     <br><br><br><br>&COPY;
     </div>
     </div>
-  </div>
-</div>
+ 
 
 
-   <div class="container-fluid">
+
+   <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
     <!-- Remove the container if you want to extend the Footer to full width. -->
 
 
   <!-- Footer -->
   <footer
           class="text-center text-lg-start text-white"
-          style="background-color: rgb(35, 35, 36)"
+          style="background-color: rgb(33, 37, 41)"
           >
     <!-- Section: Social media -->
     <section
              class="d-flex justify-content-between p-4"
-             style="background-color:#262a2e"
+             style="background-color:rgb(33, 37, 41)"
              >
       <!-- Left -->
       <div class="me-5">
@@ -139,7 +130,7 @@
             <h6 class="text-uppercase fw-bold">Company name</h6>
             <hr
                 class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color:rgb(28, 28, 30); height: 2px"
+                style="width: 60px; background-color:rgb(33, 37, 41); height: 2px"
                 />
             <p>
               Here you can use rows and columns to organize your footer
@@ -155,7 +146,7 @@
             <h6 class="text-uppercase fw-bold">Products</h6>
             <hr
                 class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color: rgb(35, 35, 36); height: 2px"
+                style="width: 60px; background-color: rgb(33, 37, 41); height: 2px"
                 />
             <p>
               <a href="#!" class="text-white">MDBootstrap</a>
@@ -178,7 +169,7 @@
             <h6 class="text-uppercase fw-bold">Useful links</h6>
             <hr
                 class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color:rgb(35, 35, 36); height: 2px"
+                style="width: 60px; background-color:rgb(33, 37, 41); height: 2px"
                 />
             <p>
               <a href="#!" class="text-white">Your Account</a>
@@ -201,7 +192,7 @@
             <h6 class="text-uppercase fw-bold">Contact</h6>
             <hr
                 class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color:rgb(35, 35, 36); height: 2px"
+                style="width: 60px; background-color:rgb(33, 37, 41); height: 2px"
                 />
             <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
             <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
@@ -218,7 +209,7 @@
     <!-- Copyright -->
     <div
          class="text-center p-3"
-         style="background-color: #262a2e"
+         style="background-color: rgb(33, 37, 41)"
          >
       © 2020 Copyright:
       <a class="text-white" href="https://mdbootstrap.com/"
