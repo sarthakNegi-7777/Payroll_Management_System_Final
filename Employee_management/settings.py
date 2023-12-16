@@ -52,12 +52,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Employee_management.wsgi.application'
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 DATABASES = {
     'default': {
@@ -119,5 +113,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'devprince4723@gmail.com'
-EMAIL_HOST_PASSWORD = 'nnqs lgxf rpyk sdov'
+EMAIL_HOST_PASSWORD = 'xxxxxxxxxxxxx'
 EMAIL_USE_TLS = True
