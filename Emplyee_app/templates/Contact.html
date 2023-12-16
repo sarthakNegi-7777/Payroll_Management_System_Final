@@ -56,24 +56,21 @@
    <div class="row p-5">
     <div class="col"></div>
     <div class="col">
-        <form>
+        <form method="post" action="{% url 'Contact' %}">
+            {% csrf_token %}
             <div class="mb-5">
                 <label for="floatingTextarea">Queries</label>
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-             
-              </div>
+                <textarea name="queries" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
-            <div class="mb-5">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-          
+           
             <button type="submit" class="btn btn-primary">Send to Us</button>
-          </form>
+        </form>
+        
     </div>
     <div class="col"></div>
    </div>

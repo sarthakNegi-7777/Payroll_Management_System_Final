@@ -16,6 +16,7 @@ urlpatterns = [
     path('signout', views.signout, name = 'signout'),
     path('About', views.About, name = 'About'),
     path('Contact', views.Contact, name = 'Contact'),
+    path('Mail_sent', views.Mail_sent, name = 'Mail_sent'),
 
 
 ] 

@@ -9,6 +9,10 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+
 
 
 from Emplyee_app.models import Employee
@@ -129,4 +133,20 @@ def About(request):
 
 @login_required
 def Contact(request):
+    if request.method == 'POST':
+    
+        message = request.POST.get('queries', '')
+
+        sender_email = 'devprince4723@gmail.com'
+        recipient_email = 'pandeyprince4723@gmail.com'
+        subject = 'New Contact Form Submission'
+
+        send_mail(subject, message, sender_email, [recipient_email])
+
+        return HttpResponseRedirect(reverse('Mail_sent'))  # Replace 'success_page' with the actual URL name
     return render(request,'Contact.html')
+
+
+@login_required
+def Mail_sent(request):
+    return render(request,"Mail_sent.html")
