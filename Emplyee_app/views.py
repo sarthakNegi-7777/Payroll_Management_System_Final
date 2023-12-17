@@ -62,7 +62,7 @@ def add_emp(request):
         new_emp = Employee(first_name=first_name, last_name=last_name, salary=salary, bonus=bonus, phone=phone, dept_id = dept, role_id = role, hire_date=datetime.now())
         new_emp.save()
 
-        # return HttpResponse('Employee added successfully')  
+       
         return redirect('emp_added_success')
        
     elif request.method == 'GET':   
@@ -80,7 +80,7 @@ def remove_emp(request,emp_id = 0):
         try:
             emp_to_be_removed = Employee.objects.get(id = emp_id)
             emp_to_be_removed.delete()
-            # return HttpResponse("employee removed Successfully")
+         
             return redirect('emp_removed_success')
 
         except:
@@ -143,7 +143,7 @@ def Contact(request):
 
         send_mail(subject, message, sender_email, [recipient_email])
 
-        return HttpResponseRedirect(reverse('Mail_sent'))  # Replace 'success_page' with the actual URL name
+        return HttpResponseRedirect(reverse('Mail_sent'))  
     return render(request,'Contact.html')
 
 
